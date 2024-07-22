@@ -1,9 +1,11 @@
-const express = require("express")
+const express = require("express");
+const app = express();
+const PORT = 3001;
+app.use(express.json());
 
-const app = express()
+app.post("/", (req, res) => {
+  console.log(req.body);
+  res.send("sss");
+});
 
-console.log("hello world!");
-
-const PORT = 8080
-
-app.listen(PORT, ()=>console.log(`Listening on - https://localhost${PORT}`))
+app.listen(PORT, () => console.log(`Listening on - https://localhost${PORT}`));
